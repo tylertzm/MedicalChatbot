@@ -1,8 +1,0 @@
-# Ignore environment variables file
-secrets.env
-
-# Ignore configuration files with sensitive info
-config/secrets.json
-
-# Ignore compiled files
-*.pyc
