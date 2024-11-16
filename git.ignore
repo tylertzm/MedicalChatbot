@@ -1,5 +1,5 @@
 # Ignore environment variables file
-.env
+secrets.env
 
 # Ignore configuration files with sensitive info
 config/secrets.json
