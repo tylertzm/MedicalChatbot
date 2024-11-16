@@ -1,5 +1,13 @@
 import requests
 import json
+from dotenv import load_dotenv
+import os
+
+# Load the variables from the secrets.env file
+load_dotenv(dotenv_path="secrets.env")
+
+# Access the variable
+api_key = os.getenv("JINA_API")
 
 # Path to your JSON file
 json_file_path = 'output.json'
@@ -12,8 +20,9 @@ with open(json_file_path, 'r') as file:
 url = 'https://api.jina.ai/v1/classify'
 headers = {
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer jina_80681ba8727a415197a5eb193c0aa8442uap_XdxlT8v3O0BoXvHDODUkIfh'
+    'Authorization': f'Bearer {api_key}'  # Correct f-string usage
 }
+
 
 # Make the POST request
 response = requests.post(url, headers=headers, json=data)
